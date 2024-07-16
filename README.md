@@ -4,8 +4,9 @@ Angular project using this API swagger http://flp-api.francecentral.cloudapp.azu
 # Clone repo 
 git clone https://github.com/Sandirane/AppCocktail.git
 
-# install the project's dependencies 
+# Install the project's dependencies 
 cd AppCocktail
+
 npm install
 
 # Run project 
