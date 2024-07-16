@@ -1,0 +1,72 @@
+{
+    "menu": {
+        "login": "Connexion",
+        "home": "Acceuil",
+        "cocktail": "Cocktail",
+        "contact": "Contact",
+        "about": "A propos",
+        "add": "Ajouter",
+        "cancel": "Annuler"
+    },
+    "menuAdmin": {
+        "login": "Connexion",
+        "logout": "Déconnexion",
+        "home": "Acceuil",
+        "menu": "Menu",
+        "dashboard": "Tableau de bord",
+        "userList": "Liste des utilisateurs",
+        "addUser": "Ajouter un utilisateur",
+        "cocktailList": "Liste des cocktails",
+        "addCocktail": "Ajouter un cocktail"
+    },
+    "loginPage": {
+        "titie": "Page de connexion",
+        "email": "Votre e-mail",
+        "password": "Mot de passe",
+        "buttonValidation": "Connexion",
+        "buttonback": "Revenir à la page d'acceuil"
+    },
+    "homePage": {
+        "title": "Bienvenue dans AppCoctail",
+        "description": "Le but est de presenter une application en Angular qui utilise une API RESTFul des cocktails",
+        "": ""
+    },
+    "cocktailPage": {
+        "title": "Les cocktails",
+        "description": "Voici la liste des cocktails",
+        "": ""
+    },
+    "aboutPage": {
+        "title": "A propos",
+        "description1": "Framework open source, basé sur TypeScript",
+        "description2": "Bootstrap est un framework CSS open source",
+        "description3": "Ajout des paquets suivants : angular-datatables, transloco, jwt-decode"
+    },
+    "dashboardPage": {
+        "titleUserPlus": "Ajouter un utilisateur",
+        "descriptionUserPlus": "Aller à la page d'ajout d'utilisateur",
+        "titleUser": "Gestion des utilisateurs",
+        "descriptionUser": "Aller à la page des gestion des utilisateurs",
+        "titlecocktailPlus": "Ajouter un cocktail",
+        "descriptioncocktailPlus": "Aller à la page pour ajouter un cocktail",
+        "titleCocktail": "Gestion des cocktails",
+        "descriptionCocktail": "Aller à la page des gestion des cocktails"
+    },
+    "dashboardUserListPage": {
+        "title": "Liste des utilisateurs",
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "pseudo": "Pseudo",
+        "email": "E-mail",
+        "password":"Mot de passe"
+    },
+    "dashboardCocktailListPage": {
+        "title": "Liste des cocktails",
+        "name": "Nom",
+        "description": "Description",
+        "recipe": "Recette"
+    },
+    "footer": {
+        "": ""
+    }
+}

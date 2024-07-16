@@ -1,0 +1,57 @@
+<ng-container *transloco="let t">
+
+    <section class="py-5 bg-light" id="scroll-target">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bolder">{{ t('cocktailPage.title') }}</h2>
+                    <p class="lead fw-normal text-muted mb-0">
+                        {{ t('cocktailPage.description') }}
+                    </p>
+                </div>
+                <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0"
+                        src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-3 pb-md-5 pb-xl-8">
+        <div class="container" style="margin-top: 70px">
+
+            @if(cocktailList.length == 0) {
+            <div class="alert alert-danger">
+                Pas de données veuillez ajouter dans la partie admin
+            </div>
+            } @else {
+
+            <div class="container overflow-hidden ">
+                <div class="row gy-4 gy-xxl-5">
+                    @for ( cocktail of cocktailList; track cocktail) {
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
+                        <div class="card text-center border-dark overflow-hidden ">
+                            <div class="card-body p-5 position-relative ">
+                                <figure class="m-0 p-0">
+                                    <img class="img-fluid" loading="lazy"
+                                        src="https://dummyimage.com/200x150/000/fff&text=Cocktail+Image"
+                                        alt="Bicycle Hat">
+                                    <figcaption class="mb-0 mt-4 p-0">
+                                        <h4 class="mb-2">{{ t('dashboardCocktailListPage.name') }} : {{ cocktail.nom }}</h4>
+                                        <p>{{ t('dashboardCocktailListPage.description') }} : {{ cocktail.description }} </p>
+                                        <p>{{ t('dashboardCocktailListPage.recipe') }}  : {{ cocktail.recette }}</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            }
+        </div>
+
+
+    </section>
+</ng-container>

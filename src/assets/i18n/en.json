@@ -1,0 +1,72 @@
+{
+    "menu": {
+        "login": "Login",
+        "home": "Home",
+        "cocktail": "Cocktail",
+        "contact": "Contact",
+        "about": "About",
+        "add": "Add",
+        "cancel": "Cancel"
+    },
+    "menuAdmin": {
+        "login": "Login",
+        "logout": "Logout",
+        "home": "Home",
+        "menu": "Menu",
+        "dashboard": "Dashboard",
+        "userList": "User List",
+        "addUser": "Add User",
+        "cocktailList": "Cocktail List",
+        "addCocktail": "Add Cocktail"
+    },
+    "loginPage": {
+        "titie": "Login page",
+        "email": "Email",
+        "password": "Password",
+        "buttonValidation": "Sign in",
+        "buttonback": "Go back page Home"
+    },
+    "homePage": {
+        "title": "Welcome to AppCoctail",
+        "description": "The goal is to present an Angular application that uses a RESTFul cocktails API",
+        "": ""
+    },
+    "cocktailPage": {
+        "title": "Cocktails",
+        "description": "Below is the list of cocktails that appears. If there are no cocktails you can add them from the admin section to see them appear below",
+        "": ""
+    },
+    "aboutPage": {
+        "title": "About",
+        "description1": "Open source framework, based on TypeScript",
+        "description2": "Bootstrap is an open source CSS framework",
+        "description3": "Added the following packages: angular-datatables, transloco, jwt-decode"
+    },
+    "dashboardPage": {
+        "titleUserPlus": "Add user",
+        "descriptionUserPlus": "Go to add user page",
+        "titleUser": "User management",
+        "descriptionUser": "Go to user management page",
+        "titlecocktailPlus": "Add a cocktail",
+        "descriptioncocktailPlus": "Go to the page to add a cocktail",
+        "titleCocktail": "Cocktail management",
+        "descriptionCocktail": "Go to cocktail management page"
+    },
+    "dashboardUserListPage": {
+        "title": "List of users",
+        "firstname": "firstname",
+        "lastname": "lastname",
+        "pseudo": "pseudo",
+        "email": "email",
+        "password": "Password"
+    },
+    "dashboardCocktailListPage": {
+        "title": "List of cocktails",
+        "name": "Name",
+        "description": "Description",
+        "recipe": "Recipe"
+    },
+    "footer": {
+        "": ""
+    }
+}

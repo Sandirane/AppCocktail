@@ -1,0 +1,72 @@
+<ng-container *transloco="let t">
+
+    <div class="container">
+        <h1>{{ t('menuAdmin.dashboard') }}</h1>
+        <section class="py-3 py-md-5 py-xl-8 bg-white">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-md-6">
+                        <div class="card border-dark">
+                            <div class="card-body text-center">
+                                <h4 class="mb-4">{{ t('dashboardPage.titleUserPlus') }}</h4>
+                                <p class="mb-4 text-secondary">
+                                    {{ t('dashboardPage.descriptionUserPlus') }}
+                                </p>
+                                <button class="btn btn-outline-primary" routerLink="/admin/user/add">
+                                    <i class="bi-person-plus h1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="card border-dark">
+                            <div class="card-body text-center">
+                                <h4 class="mb-4">{{ t('dashboardPage.titleUser') }}</h4>
+                                <p class="mb-4 text-secondary">
+                                    {{ t('dashboardPage.descriptionUser') }}
+                                </p>
+                                <button class="btn btn-outline-primary" routerLink="/admin/user">
+                                    <i class="bi bi-table h1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="card border-dark">
+                            <div class="card-body text-center">
+
+
+                                <h4 class="mb-4">{{ t('dashboardPage.titlecocktailPlus') }}</h4>
+                                <p class="mb-4 text-secondary">
+                                    {{ t('dashboardPage.descriptioncocktailPlus') }}
+                                </p>
+                                <button class="btn btn-outline-primary" routerLink="/admin/cocktails/add">
+                                    <i class="bi bi-plus-circle h1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card border-dark">
+                            <div class="card-body text-center">
+                                <h4 class="mb-4">{{ t('dashboardPage.titleCocktail') }}</h4>
+                                <p class="mb-4 text-secondary">
+                                    {{ t('dashboardPage.descriptionCocktail') }}
+                                </p>
+                                <button class="btn btn-outline-primary" routerLink="/admin/cocktails">
+                                    <i class="bi bi-cup-straw h1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</ng-container>

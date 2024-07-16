@@ -1,0 +1,43 @@
+<ng-container *transloco="let t">
+
+    <div *ngIf="showSuccessAlert" class="alert alert-success" role="alert">
+        Utilisateur sauvegardé avec succès!
+    </div>
+    <div *ngIf="showErrorAlert" class="alert alert-danger" role="alert">
+        Erreur lors de la sauvegarde de l'utilisateur.
+    </div>
+
+    <form (ngSubmit)="addUser()" #userEditForm="ngForm">
+
+        <div class="form-group">
+            <label for="nom">{{ t('dashboardUserListPage.lastname') }}</label>
+            <input id="nom" name="nom" type="text" class="form-control" [(ngModel)]="user.nom" #nom="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="prenom">{{ t('dashboardUserListPage.firstname') }}</label>
+            <input id="prenom" name="prenom" type="text" class="form-control" [(ngModel)]="user.prenom" #nom="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="email">{{ t('dashboardUserListPage.email') }}</label>
+            <input id="email" name="email" type="text" class="form-control" [(ngModel)]="user.email" #nom="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="pseudo">{{ t('dashboardUserListPage.pseudo') }}</label>
+            <input id="pseudo" name="pseudo" type="text" class="form-control" [(ngModel)]="user.pseudo" #nom="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="email">{{ t('dashboardUserListPage.password') }}</label>
+            <input id="password" name="password" type="text" class="form-control" [(ngModel)]="user.password"
+                #nom="ngModel">
+        </div>
+
+        <button type="submit" class="btn btn-primary">{{ t('menu.add') }}</button>
+        <button class="btn btn-secondary" routerLink="/admin">{{ t('menu.cancel') }}</button>
+
+    </form>
+
+</ng-container>

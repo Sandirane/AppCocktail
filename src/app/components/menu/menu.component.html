@@ -1,0 +1,33 @@
+<ng-container *transloco="let t">
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <button type="button" class="navbar-toggler" (click)="toggleNavbar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" [class.collapse]="navbarCollapsed">
+            <ul class="navbar-nav">
+                @for(action of actions; track action) {
+                <li>
+                    <button (click)="setCurrentAction(action)" [class]="
+                    action == currentAction?'btn btn-light ms-1' : 'btn btn-outline-light ms-1'"
+                        routerLink="{{action.route}}">
+                        {{ t(action.title) }} <i class="bi bi-{{ action.icon }}"></i>
+                    </button>
+                </li>
+                }
+            </ul>
+        </div>
+        <div class="d-flex">
+            <select class="form-select" [formControl]="langCtrl" [attr.aria-label]="t('menu.language')">
+                @for (lang of availableLangs; track lang) {
+                <option [value]="lang">{{ lang }}</option>
+                }
+            </select>
+            <button class="btn btn-outline-light ms-1" type="button" [routerLink]="['admin']">
+                {{ t('menu.login') }}
+            </button>
+        </div>
+    </nav>
+
+
+</ng-container>

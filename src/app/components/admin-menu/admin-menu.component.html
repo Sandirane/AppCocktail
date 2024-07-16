@@ -1,0 +1,61 @@
+<ng-container *transloco="let t">
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+        <div class="container-fluid">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#toggle">
+                {{ t('menuAdmin.menu') }}
+            </button>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <select class="form-select " [formControl]="langCtrl" [attr.aria-label]="t('menu.language')">
+                        @for (lang of availableLangs; track lang) {
+                        <option [value]="lang">{{ lang }}</option>
+                        }
+                    </select>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-primary ms-1" routerLink="/admin/dashboard">
+                        <i class="bi bi-house"></i>
+                    </button>
+
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-success ms-1" routerLink="/admin/user/profile">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+
+                    <button class="btn btn-outline-danger ms-1" (click)="logout()">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" id="toggle">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">{{ t('menuAdmin.dashboard') }}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                @for(action of actions; track action) {
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                        (click)="setCurrentAction(action)" routerLink="{{action.route}}" data-bs-toggle="offcanvas">
+                        {{ t(action.title) }} <i class="bi bi-{{ action.icon }}"></i>
+                    </a>
+
+                </div>
+                }
+            </ul>
+
+        </div>
+
+    </div>
+</ng-container>

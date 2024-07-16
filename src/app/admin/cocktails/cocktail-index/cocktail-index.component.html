@@ -1,0 +1,54 @@
+<h1>Liste des cocktails</h1>
+
+<div class="card">
+    <div class="card-body">
+
+        <table class="table table-striped table-hover" datatable [dtOptions]="dtoptions" [dtTrigger]="dttrigger">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Recette</th>
+                    <!--
+                    <th>Created At</th>
+                    <th>Updated At</th> 
+                    -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for ( cocktail of cocktailList; track cocktail) {
+                <tr>
+                    <td>{{ cocktail.nom }}</td>
+                    <th>{{ cocktail.description }}</th>
+                    <th>{{ cocktail.recette }}</th>
+                    <!--
+                    <th>{{ cocktail.createdAt | date }}</th>
+                    <th>{{ cocktail.updatedAt | date }}</th> 
+                    -->
+                    <td>
+                        <button class="btn btn-outline-warning" [routerLink]="['edit', cocktail.id]">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        |
+                        <button class="btn btn-outline-danger" (click)="deleteCocktail(cocktail.id)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        |
+
+                        @if(cocktail.deletedAt == null) {
+                        <button class="btn btn-danger" (click)="trashCocktail(cocktail.id)">
+                            Trash Cocktail
+                        </button>
+                        } @else {
+                        <button class="btn btn-outline-danger" (click)="unTrashCocktail(cocktail.id)">
+                            Untrash Cocktail
+                        </button>
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<ng-container *transloco="let t">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-4 p-sm-5">
+
+                    <h5 class="card-title text-center mb-5 fw-light fs-5">
+                        <i class="bi bi-person-square" style="font-size:23px"></i>
+                        {{ t('loginPage.titie') }} <br/> <br/>
+                        Email : roger&#64;marcel.com  <br/>
+                        Password : marcel
+                    </h5>
+
+                    <form (ngSubmit)="authenticate()" #emailForm="ngForm">
+
+                        <label for="email" class="form-label" FormLabel>{{ t('loginPage.email') }} :</label>
+                        <div class="form mb-3" FormLabelValidation>
+                            <input id="email" class="form-control" name="email" [(ngModel)]="credentials.email"
+                                #emailCtrl="ngModel" required />
+
+                            @if (emailCtrl.dirty && emailCtrl.hasError('required')) {
+                            <div class="alert alert-danger">Email is required </div>
+                            }
+                        </div>
+
+                        <label for="password" class="form-label" FormLabel>{{ t('loginPage.password') }} :</label>
+                        <div class="form mb-3" FormLabelValidation>
+                            <input id="password" class="form-control" type="password" name="password"
+                                [(ngModel)]="credentials.password" #passwordCtrl="ngModel" required />
+
+
+                            @if (passwordCtrl.dirty && passwordCtrl.hasError('required')) {
+                            <div class="alert alert-danger">Password is required</div>
+                            }
+
+                        </div>
+
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" type="submit"
+                                [disabled]="emailForm.invalid">
+                                {{ t('loginPage.buttonValidation') }}
+                            </button>
+                        </div>
+                        <hr class="my-4">
+                        <table class="table ">
+                            <tr>
+                                <th>
+                                    <div class="d-grid">
+                                        <a routerLink='/home'>
+                                            {{ t('loginPage.buttonback') }}
+                                        </a>
+                                    </div>
+                                </th>
+                                <th>
+                                    <select class="form-select" [formControl]="langCtrl"
+                                        [attr.aria-label]="t('menu.language')">
+                                        @for (lang of availableLangs; track lang) {
+                                        <option [value]="lang">{{ lang }}</option>
+                                        }
+                                    </select>
+                                </th>
+
+                            </tr>
+
+
+                        </table>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
