@@ -1,23 +1,34 @@
-<form (ngSubmit)="editCocktail()" #userEditForm="ngForm">
+<ng-container *transloco="let t">
 
-    <div class="form-group">
-        <label for="nom">Nom</label>
-        <input id="nom" name="nom" type="text" class="form-control" [(ngModel)]="cocktail.nom" #nom="ngModel">
+    <div *ngIf="showSuccessAlert" class="alert alert-success" role="alert">
+        Cocktail modifier avec succès!
+    </div>
+    <div *ngIf="showErrorAlert" class="alert alert-danger" role="alert">
+        Erreur lors de la modification du Cocktail.
     </div>
 
-    <div class="form-group">
-        <label for="description">Description</label>
-        <input id="description" name="description" type="text" class="form-control" [(ngModel)]="cocktail.description"
-            #nom="ngModel">
-    </div>
+    <form (ngSubmit)="editCocktail()" #userEditForm="ngForm">
 
-    <div class="form-group">
-        <label for="recette">Recette</label>
-        <input id="recette" name="recette" type="text" class="form-control" [(ngModel)]="cocktail.recette"
-            #nom="ngModel">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" class="form-control" [(ngModel)]="cocktail.nom" #nom="ngModel">
+        </div>
 
-    </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input id="description" name="description" type="text" class="form-control"
+                [(ngModel)]="cocktail.description" #nom="ngModel">
+        </div>
 
+        <div class="form-group">
+            <label for="recette">Recette</label>
+            <input id="recette" name="recette" type="text" class="form-control" [(ngModel)]="cocktail.recette"
+                #nom="ngModel">
 
-    <button type="submit" class="btn btn-primary">Update</button>
-</form>
+        </div>
+
+        <button type="submit" class="btn btn-primary">{{ t('menu.update') }}</button>
+        <button class="btn btn-secondary" routerLink="/admin">{{ t('menu.cancel') }}</button>
+    </form>
+
+</ng-container>

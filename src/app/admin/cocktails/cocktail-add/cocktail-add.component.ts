@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule, NonNullableFormBuilder } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ICocktail } from '@app/models/cocktail';
 import { CocktailService } from '@app/services/cocktail.service';
 import { I18nService } from '@app/services/i18n.service';
@@ -27,6 +27,7 @@ export class CocktailAddComponent implements OnInit {
   }
 
   constructor(private cocktailService: CocktailService,
+    private router: Router,
     private activated: ActivatedRoute,
     private fb: NonNullableFormBuilder,
     private i18nService: I18nService) {
@@ -42,6 +43,7 @@ export class CocktailAddComponent implements OnInit {
     setTimeout(() => {
       this.showSuccessAlert = false;
       this.showErrorAlert = false;
+      this.router.navigateByUrl('admin')
     }, 1000); // 5 secondes
 
   }
@@ -63,7 +65,7 @@ export class CocktailAddComponent implements OnInit {
           this.showSuccessAlert = true;
           this.showErrorAlert = false;
           this.hideAlertsAfterTimeout();
-          console.log(data.message)
+          console.log(data.message) 
         },
         error: err => {
           this.showSuccessAlert = false;

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule, NonNullableFormBuilder } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { IUser } from '@app/models/user';
 import { I18nService } from '@app/services/i18n.service';
 import { UserService } from '@app/services/user.service';
@@ -29,6 +29,7 @@ export class UserAddComponent implements OnInit {
 
   constructor(
     private activated: ActivatedRoute, 
+    private router: Router,
     private userService: UserService,
     private fb: NonNullableFormBuilder,
     private i18nService: I18nService) {
@@ -43,7 +44,8 @@ export class UserAddComponent implements OnInit {
   private hideAlertsAfterTimeout() {
     setTimeout(() => {
       this.showSuccessAlert = false;
-      this.showErrorAlert = false;
+      this.showErrorAlert = false; 
+      this.router.navigateByUrl('admin')
     }, 1000); // 5 secondes
 
   }
