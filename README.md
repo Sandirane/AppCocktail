@@ -14,5 +14,5 @@ ng serve
 
 port : http://localhost:4200/
 
-# lien de l'application 
+# Lien de l'application 
 https://appcocktail-ad761.web.app/home
